@@ -1,6 +1,8 @@
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -50,10 +52,12 @@ public class TestRelativeLocators {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		//Navigate to this site for sample resizable object.
-		driver.get("https://jqueryui.com/resources/demos/resizable/default.html");
+		driver.get("http://way2automation.com/way2auto_jquery/index.php");
 		System.out.println("TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
-		//Drag and drop the resizable object using Actions class.
+		//Fill-in the Email Address field.
+		WebElement fieldEmail = driver.findElement(By.xpath("//input[@name='email']"));
+		fieldEmail.sendKeys("michikodaimon@tv-asahi.co.jp");
 		
 	}
 
