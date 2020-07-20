@@ -77,6 +77,18 @@ public class TestRelativeLocators {
 		driver.findElement(RelativeLocator.withTagName("input").toRightOf(By.linkText("Signin"))).click();
 		System.out.println("RUN 2: Successfully clicked the Submit button");
 		
+		//Navigate to this site for sample locators
+		driver.get("http://way2automation.com/way2auto_jquery/index.php");
+		System.out.println("TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
+		
+		//Fill-in the Email Address field.
+		WebElement fieldEmail2 = driver.findElement(By.xpath("//input[@name='email']"));
+		fieldEmail2.sendKeys("michikodaimon@tv-asahi.co.jp");
+		
+		//Click the Submit button. Use of relative locators for Selenium 4, right of a locator element.
+		driver.findElement(RelativeLocator.withTagName("input").toRightOf(By.linkText("Signin"))).click();
+		System.out.println("RUN 2: Successfully clicked the Submit button");
+		
 	}
 
 }
