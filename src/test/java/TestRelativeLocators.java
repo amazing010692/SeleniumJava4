@@ -10,6 +10,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.locators.RelativeLocator;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -51,7 +52,7 @@ public class TestRelativeLocators {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		//Navigate to this site for sample resizable object.
+		//Navigate to this site for sample locators.
 		driver.get("http://way2automation.com/way2auto_jquery/index.php");
 		System.out.println("TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
@@ -62,6 +63,17 @@ public class TestRelativeLocators {
 		//Click the Submit button.
 		WebElement buttonSubmit = driver.findElement(By.xpath("(//input[@value='Submit'])[2]"));
 		buttonSubmit.click();
+		
+		//Navigate to this site for sample locators
+		driver.get("http://way2automation.com/way2auto_jquery/index.php");
+		System.out.println("TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
+		
+		//Fill-in the Email Address field.
+		WebElement fieldEmail1 = driver.findElement(By.xpath("//input[@name='email']"));
+		fieldEmail1.sendKeys("michikodaimon@tv-asahi.co.jp");
+		
+		//Click the Submit button. Use of relative locators for Selenium 4, right of a locator element.
+		driver.findElement(RelativeLocator.withTagName("input").toRightOf(By.linkText("Signin"))).click();
 		
 	}
 
