@@ -59,6 +59,10 @@ public class TestRelativeLocators {
 		WebElement fieldEmail = driver.findElement(By.xpath("//input[@name='email']"));
 		fieldEmail.sendKeys("michikodaimon@tv-asahi.co.jp");
 		
+		//Click the Submit button.
+		WebElement buttonSubmit = driver.findElement(By.xpath("(//input[@value='Submit'])[2]"));
+		buttonSubmit.click();
+		
 	}
 
 }
