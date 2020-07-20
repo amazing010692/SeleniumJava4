@@ -63,6 +63,7 @@ public class TestRelativeLocators {
 		//Click the Submit button.
 		WebElement buttonSubmit = driver.findElement(By.xpath("(//input[@value='Submit'])[2]"));
 		buttonSubmit.click();
+		System.out.println("RUN 1: Successfully clicked the Submit button");
 		
 		//Navigate to this site for sample locators
 		driver.get("http://way2automation.com/way2auto_jquery/index.php");
@@ -74,6 +75,7 @@ public class TestRelativeLocators {
 		
 		//Click the Submit button. Use of relative locators for Selenium 4, right of a locator element.
 		driver.findElement(RelativeLocator.withTagName("input").toRightOf(By.linkText("Signin"))).click();
+		System.out.println("RUN 2: Successfully clicked the Submit button");
 		
 	}
 
