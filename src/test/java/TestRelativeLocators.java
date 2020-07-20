@@ -89,6 +89,8 @@ public class TestRelativeLocators {
 		driver.findElement(RelativeLocator.withTagName("input").below(By.xpath("(//input[@name='password'])[2]"))).click();
 		System.out.println("RUN 3: Successfully clicked the Submit button");
 		
+		//Close the browser
+		driver.quit();
 	}
 
 }
