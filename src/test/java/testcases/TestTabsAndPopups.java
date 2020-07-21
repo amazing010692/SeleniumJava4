@@ -67,7 +67,7 @@ public class TestTabsAndPopups {
 		//Click Sign-In Link.
 		WebElement linkSignIn = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[5]/ul/li[2]/a"));
 		linkSignIn.click();
-		System.out.println("Sign-in link has been successfully clicked and has opened in a new tab.");
+		System.out.println("The Sign-in link has been successfully clicked and has opened in a new tab.");
 		System.out.println("Third window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
 		
