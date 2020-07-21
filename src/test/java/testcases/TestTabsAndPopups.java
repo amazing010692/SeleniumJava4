@@ -2,7 +2,7 @@ package testcases;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,7 +10,6 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.locators.RelativeLocator;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -56,7 +55,9 @@ public class TestTabsAndPopups {
 		driver.get("https://google.com");
 		System.out.println("First window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
-		//Fill-in the Email Address 
+		//Switch to a new tab.
+		driver.switchTo().newWindow(WindowType.TAB);
+		
 	}
 
 }
