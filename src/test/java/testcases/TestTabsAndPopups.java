@@ -1,4 +1,6 @@
 package testcases;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -72,9 +74,13 @@ public class TestTabsAndPopups {
 		linkSignIn.click();
 		System.out.println("The Sign-in link has been successfully clicked and has opened a new tab after clicking.");
 		
-		//Opens and switches focus to a new tab.
-		driver.switchTo().newWindow(WindowType.TAB);
-		System.out.println("Third window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
+		//Manual switch by getting all window handles and based on those handles, we need to switch to the 3rd window.
+		Set<String> windowIDs = driver.getWindowHandles();
+		Iterator<String> iterate = windowIDs.iterator();
+		
+		//Since we have 3 opened windows, all in the same single browser so we need to iterate 3 times.
+		iterate.next();
+		iterate.next();
 		
 		
 	}
