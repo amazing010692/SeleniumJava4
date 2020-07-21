@@ -61,6 +61,7 @@ public class TestTabsAndPopups {
 		
 		//Opens and switches focus to a new tab.
 		driver.switchTo().newWindow(WindowType.TAB);
+		System.out.println("Successfully opens and switches focus to new tab.");
 		
 		//In a new tab, navigate to Gmail.
 		driver.get("https://gmail.com");
@@ -69,7 +70,7 @@ public class TestTabsAndPopups {
 		//Click Sign-In Link.
 		WebElement linkSignIn = driver.findElement(By.linkText("Mag-sign in"));
 		linkSignIn.click();
-		System.out.println("The Sign-in link has been successfully clicked and has opened in a new tab.");
+		System.out.println("The Sign-in link has been successfully clicked and has opened a new tab after clicking.");
 		
 		//Opens and switches focus to a new tab.
 		driver.switchTo().newWindow(WindowType.TAB);
