@@ -94,8 +94,9 @@ public class TestTabsAndPopups {
 		driver.get("http://way2automation.com/");
 		System.out.println("Fourth window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
-		//Close all the opened windows or end the entrire session.
+		//Close all the opened windows or end the entrie session.
 		driver.quit();
+		System.out.println("Successfully closed all the 4 opened windows.");
 	}
 
 }
