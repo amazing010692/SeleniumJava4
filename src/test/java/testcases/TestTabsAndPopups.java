@@ -1,7 +1,9 @@
 package testcases;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -61,6 +63,10 @@ public class TestTabsAndPopups {
 		//In a new tab, navigate to Gmail.
 		driver.get("https://gmail.com");
 		System.out.println("Second window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
+		
+		//Click Sign-In Link.
+		WebElement linkSignIn = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[5]/ul/li[2]/a"));
+		linkSignIn.click();
 		
 	}
 
