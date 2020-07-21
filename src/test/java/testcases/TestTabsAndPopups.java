@@ -12,6 +12,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -49,7 +51,7 @@ public class TestTabsAndPopups {
 		
 		}
 		
-		//Pre-conditions | Maximize the browser and apply implicit waits.
+		//Pre-conditions | Maximize the browser and apply implicit waits and.
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
@@ -65,7 +67,11 @@ public class TestTabsAndPopups {
 		System.out.println("Second window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
 		//Click Sign-In Link.
-		WebElement linkSignIn = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[5]/ul/li[2]/a"));
+		@SuppressWarnings("deprecation")
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		String xpathSignIn = "(//a[@class='h-c-header__nav-li-link '])[2]";
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathSignIn)));
+		WebElement linkSignIn = driver.findElement(By.xpath(xpathSignIn));
 		linkSignIn.click();
 		System.out.println("The Sign-in link has been successfully clicked and has opened in a new tab.");
 		System.out.println("Third window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
