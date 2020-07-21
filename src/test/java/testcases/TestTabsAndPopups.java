@@ -51,12 +51,16 @@ public class TestTabsAndPopups {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		//Navigate to this site for sample locators.
+		//Navigate to Google.
 		driver.get("https://google.com");
 		System.out.println("First window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
 		//Switch to a new tab.
 		driver.switchTo().newWindow(WindowType.TAB);
+		
+		//In a new tab, navigate to Gmail.
+		driver.get("https://gmail.com");
+		System.out.println("Second window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
 	}
 
