@@ -81,8 +81,13 @@ public class TestTabsAndPopups {
 		//Since we have 3 opened windows, all in the same single browser so we need to iterate 3 times.
 		iterate.next();
 		iterate.next();
+		String third_window = iterate.next();
 		
 		
+		//Switch now to third window.
+		driver.switchTo().window(third_window);
+		System.out.println("Successfully switched to 3rd window.");
+		System.out.println("Third window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 	}
 
 }
