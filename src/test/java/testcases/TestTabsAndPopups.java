@@ -54,7 +54,7 @@ public class TestTabsAndPopups {
 		
 		//Navigate to this site for sample locators.
 		driver.get("https://google.com");
-		System.out.println("TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
+		System.out.println("First window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
 		//Fill-in the Email Address 
 	}
