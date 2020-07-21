@@ -14,8 +14,6 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -95,6 +93,9 @@ public class TestTabsAndPopups {
 		//This is the 4th window and navigate to another site.
 		driver.get("http://way2automation.com/");
 		System.out.println("Fourth window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
+		
+		//Close all the opened windows or end the entrire session.
+		driver.quit();
 	}
 
 }
