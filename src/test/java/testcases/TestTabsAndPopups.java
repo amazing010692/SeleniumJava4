@@ -67,11 +67,7 @@ public class TestTabsAndPopups {
 		System.out.println("Second window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
 		
 		//Click Sign-In Link.
-		@SuppressWarnings("deprecation")
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		String xpathSignIn = "(//a[@class='h-c-header__nav-li-link '])[2]";
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathSignIn)));
-		WebElement linkSignIn = driver.findElement(By.xpath(xpathSignIn));
+		WebElement linkSignIn = driver.findElement(By.linkText("Mag-sign in"));
 		linkSignIn.click();
 		System.out.println("The Sign-in link has been successfully clicked and has opened in a new tab.");
 		System.out.println("Third window --- TITLE: " + driver.getTitle() + " | URL: " + driver.getCurrentUrl());
